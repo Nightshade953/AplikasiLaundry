@@ -1,5 +1,5 @@
 <?php
-require_once "sidebars.php";
+require_once "include/sidebars.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
