@@ -8,5 +8,6 @@
 <body>
     <h1>haayha</h1>
     <h1>Biji apa yang ganjil</h1>
+    <h1>Biji mas ade</h1>
 </body>
 </html>
