@@ -8,10 +8,34 @@ require_once "sidebars.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Beri Ulasan - Laundry SMK BPP</title>
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden; /* Mencegah scroll horizontal */
+            margin: 0;
+            padding: 0;
+        }
+
+        #layoutSidenav_content {
+            min-height: 100vh;
+            padding-bottom: 50px; /* Memberikan ruang agar footer tidak terpotong */
+            width: 100%;
+            overflow-x: hidden; /* Pastikan tidak ada scroll horizontal */
+        }
+
+        .container-fluid {
+            max-width: 100%; /* Menghindari lebar kontainer melebihi layar */
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+        form{
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
-<div id="layoutSidenav_content" style="width: 1500px;">
-    <main>
+<div id="layoutSidenav_content">
         <div class="container-fluid px-4">
             <h1 class="mt-4">Beri Ulasan</h1>
             <ol class="breadcrumb mb-4">
