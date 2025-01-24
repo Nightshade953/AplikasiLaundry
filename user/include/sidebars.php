@@ -1,3 +1,12 @@
+<?php
+session_start();
+include "include/conn.php";
+
+
+
+?>
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -76,7 +85,7 @@
       <br><br><br><br><br><br><br><br><br><br>
       <br><br><br>
       <li>
-        <a href="logout.php" class="nav-link text-white">
+        <a href="../admin/logout.php" class="nav-link text-white">
         <i class="fa-solid fa-right-from-bracket"></i>
           Logout
         </a>
@@ -86,7 +95,7 @@
     <div class="dropdown">
       <a href="#" class="d-flex align-items-center text-white text-decoration-none" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
         <img src="https://github.com/user.png" alt="" width="32" height="32" class="rounded-circle me-2">
-        <strong>Nama user</strong>
+        <strong><?= $_SESSION["username"]?></strong>
       </a>
     </div>
   </div>

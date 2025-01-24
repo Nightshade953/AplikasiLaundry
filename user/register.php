@@ -6,7 +6,7 @@ require 'PHPMailer/src/Exception.php';
 require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
 
-$conn = mysqli_connect("localhost", "root", "", "db_ecomerce");
+$conn = mysqli_connect("localhost", "root", "", "db_laundry");
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = mysqli_real_escape_string($conn, $_POST['username']);
@@ -14,14 +14,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $phone = mysqli_real_escape_string($conn, $_POST['phone']);
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-    $checkQuery = "SELECT * FROM users WHERE username='$username' OR email='$email'";
+    $checkQuery = "SELECT * FROM tb_user WHERE username='$username' OR email='$email'";
     $result = mysqli_query($conn, $checkQuery);
 
     if (mysqli_num_rows($result) > 0) {
         $error = "Username or Email already used!";
     } else {
         $verification_code = str_pad(rand(0, 999999), 6, '0', STR_PAD_LEFT);
-        $query = "INSERT INTO users (username, email, password, phone, verification_code) VALUES ('$username', '$email', '$password', '$phone', '$verification_code')";
+        $query = "INSERT INTO tb_user (username, email, password, phone, verification_code) VALUES ('$username', '$email', '$password', '$phone', '$verification_code')";
         
         if (mysqli_query($conn, $query)) {
             $mail = new PHPMailer(true);
