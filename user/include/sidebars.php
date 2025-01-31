@@ -57,27 +57,27 @@ include "include/conn.php";
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">
 
-        <a href="index.php" class="nav-link text-white" aria-current="page">
+        <a href="../user/index.php" class="nav-link text-white" aria-current="page">
         <i class="fa-solid fa-house"></i>
           Home
         </a>
       </li>
       <li>
 
-        <a href="riwayat.php" class="nav-link text-white">
+        <a href="../user/riwayat.php" class="nav-link text-white">
         <i class="fa-solid fa-clock-rotate-left"></i>
           Riwayat
         </a>
       </li>
       <li>
 
-        <a href="profile.php" class="nav-link text-white">
+        <a href="../user/profile.php" class="nav-link text-white">
         <i class="fa-solid fa-user"></i>
           Profile
         </a>
       </li>
       <li>
-        <a href="ulasan.php" class="nav-link text-white">
+        <a href="../user/ulasan.php" class="nav-link text-white">
         <i class="fa-solid fa-star"></i>
           Ulasan
         </a>
@@ -85,7 +85,7 @@ include "include/conn.php";
       <br><br><br><br><br><br><br><br><br><br>
       <br><br><br>
       <li>
-        <a href="../admin/logout.php" class="nav-link text-white">
+        <a href="../user/login.php" class="nav-link text-white">
         <i class="fa-solid fa-right-from-bracket"></i>
           Logout
         </a>

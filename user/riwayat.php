@@ -1,5 +1,10 @@
 <?php
 require_once "include/sidebars.php";
+include "include/conn.php";
+
+$sql = ('SELECT * FROM tb_riwayat');
+$result = mysqli_query($conn, $sql);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -52,19 +57,25 @@ require_once "include/sidebars.php";
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th scope="row"></th>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td align="center">
-                                    <button type="button" class="btn btn-sm btn-danger" id="btnHapus">
-                                        <i class="fa-solid fa-trash">Hapus</i>
-                                    </button>
-                                </td>
-                            </tr>
-                            <?php  ?>
+                            <?php
+                                $no = 1;
+                                if (mysqli_num_rows($result) > 0){
+                                    while ($row = mysqli_fetch_assoc($result)){
+                                        echo "
+                                                <tr>
+                                                <td align ='center'>{$no}</td>
+                                                <td align ='center'>{$row['jenis']}</td>
+                                                <td align ='center'>{$row['tanggal']}</td>
+                                                <td align ='center'>{$row['status']}</td>
+                                                <td align ='center'>{$row['total']}</td>
+                                                <td align ='center'> <a href = 'hapus.php' class = 'btn btn-danger'>Hapus</td>
+          
+                                        ";
+                                    }
+                                }
+
+                            
+                            ?>
                         </tbody>
                     </table>
                 </div>

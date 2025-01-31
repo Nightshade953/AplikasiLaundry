@@ -21,7 +21,7 @@ if (!$conn) {
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['email'])) {
         $email = mysqli_real_escape_string($conn, $_POST['email']);
-        $query = "SELECT * FROM users WHERE email = '$email'";
+        $query = "SELECT * FROM tb_user WHERE email = '$email'";
         $result = mysqli_query($conn, $query);
 
         if (mysqli_num_rows($result) > 0) {
@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION['email'] = $email;
             $_SESSION['verification_code'] = $code;
 
-            $sql = "UPDATE users SET verification_code='$code' WHERE email='$email'";
+            $sql = "UPDATE tb_user SET verification_code='$code' WHERE email='$email'";
             mysqli_query($conn, $sql);
 
             $mail = new PHPMailer(true);
@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $mail->Host = 'smtp.gmail.com';
                 $mail->SMTPAuth = true;
                 $mail->Username = 'sharpsensix.official@gmail.com';
-                $mail->Password = 'yyjw owlu oiwl tvfa'; // Pastikan untuk mengganti dengan password yang benar
+                $mail->Password = 'yyjw owlu oiwl tvfa';
                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
                 $mail->Port = 587;
 
@@ -82,14 +82,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <title>Lupa Password</title>
     <style>
         body {
-            background-color: #1f2937; /* Warna latar belakang yang sama dengan halaman lain */
-            color: #fff; /* Warna teks putih */
+            background-color: #1f2937;
+            color: #fff;
         }
         .checkout-container {
             max-width: 500px;
             margin: 50px auto;
             padding: 20px;
-            background-color: #374151; /* Warna latar belakang kontainer */
+            background-color: #374151;
             border-radius: 10px;
             border: 1px solid #ddd;
         }
@@ -101,12 +101,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
         .btn-primary {
             animation: pulse 1s infinite;
-            width: 100%; /* Membuat tombol lebar penuh */
+            width: 100%;
             background-color: #007bff;
             border: none;
         }
         .btn-primary:hover {
-            background-color: #0056b3; /* Warna hover tombol */
+            background-color: #0056b3;
         }
         @keyframes pulse {
             0% { transform: scale(1); }

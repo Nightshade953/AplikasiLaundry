@@ -39,7 +39,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 $mail->isHTML(true);
                 $mail->Subject = 'Your Verification Code';
-                $mail->Body = "Hello $username,<br><br>Your verification code is: <strong>$verification_code</strong><br><br>Please enter this code to complete your registration.";
+                $mail->Body = "
+<html lang='en'>
+<head>
+    <meta charset='utf-8'/>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport'/>
+    <title>Verification Code</title>
+    <style>
+        body { background-color: #1a202c; color: #ffffff; font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+        .container { background-color: #2d3748; padding: 20px; border-radius: 8px; max-width: 400px; margin: auto; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); }
+        .button { background-color: #3182ce; color: #ffffff; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block; margin-top: 20px; }
+        .footer { font-size: 12px; color: #a0aec0; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class='container'>
+        <img alt='Google logo' src='https://placehold.co/100x40?text=Google&bg=4285F4&text_color=FFFFFF'/>
+        <h1>Verification Code</h1>
+        <p>Hello, <strong>$username</strong></p>
+        <p>Your verification code is:</p>
+        <a class='button'>$verification_code</a>
+        <p class='footer'>
+            You received this email to let you know about important changes to your account.<br/>
+            © 2025 Laundry Barudak Pemuda Pancasila (BPP) LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA
+        </p>
+    </div>
+</body>
+</html>";
 
                 $mail->send();
                 header("Location: verify.php?email=" . urlencode($email));

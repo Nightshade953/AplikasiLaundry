@@ -1,6 +1,11 @@
 <?php
 require_once "include/sidebars.php";
 
+if (!isset($_SESSION['username'])) {
+    header("Location: login.php");
+    exit;
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,9 +46,10 @@ require_once "include/sidebars.php";
                 <li class="breadcrumb-item active">Profile</li>
             </ol>
             <div class="profile-header">
-                <img src="../gambar/logo12.png" alt="Foto Profil">
-                <h2>Nama Pengguna</h2>
-                <p>Deskripsi singkat tentang pengguna.</p>
+                <img src="../user/assets/assets/images/person2.png" alt="Foto Profil">
+                <h2><?= $_SESSION["username"]?></h2>
+                <p>Selamat datang <?= $_SESSION["username"]?> di Aplikasi Laundry kami </p>
+                 <p>harap gunakan dengan bijak..</p>
             </div>
         </div>
     </main>

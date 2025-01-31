@@ -6,7 +6,7 @@ if (!isset($_SESSION['verified']) || $_SESSION['verified'] !== true) {
     exit;
 }
 
-$conn = mysqli_connect("localhost", "root", "", "db_ecomerce");
+$conn = mysqli_connect("localhost", "root", "", "db_laundry");
 
 if (!$conn) {
     die("Koneksi gagal: " . mysqli_connect_error());
@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $hashed_password = password_hash($new_password, PASSWORD_BCRYPT);
         $email = $_SESSION['email'];
 
-        $sql = "UPDATE users SET password='$hashed_password' WHERE email='$email'";
+        $sql = "UPDATE tb_user SET password='$hashed_password' WHERE email='$email'";
         if (mysqli_query($conn, $sql)) {
             echo "<div class='alert alert-success text-center'>Password berhasil diubah. Silakan login kembali.</div>";
             session_destroy();
@@ -91,9 +91,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <input type="password" class="form-control" id="confirm_password" name="confirm_password" required>
             </div>
             <button type="submit" name="send" class="btn btn-primary">Update</button>
+            <br><br>
+            <button class="btn btn-danger" style="margin-left: 240px;"><a href="login.php" style="color:white;">Kembali ke halaman login</a></button>
         </form>
     </div>
 </div>
-
 </body>
 </html>
