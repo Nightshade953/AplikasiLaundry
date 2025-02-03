@@ -21,9 +21,11 @@ if (isset($_POST['login'])) {
     if (password_verify($pass, $row['password'])) {
       $_SESSION['username'] = $username;
       $_SESSION['userid'] = $row['id'];
-      $_SESSION['level'] = $row['level'];
-      $_SESSION['tgllogin'] = date('Y-m-d H:i:s');
+      $_SESSION['email'] = $row['email'];
+      $_SESSION['phone'] = $row['phone'];
+      $_SESSION['created_at'] = $row['created_at'];
       $_SESSION['login'] = true;
+
       echo "
       <script>
         alert('Login berhasil');
@@ -85,7 +87,7 @@ if (isset($_POST['login'])) {
 
                             <div class="form-group row">
                                 <div class="col-12">
-                                    <input class="form-control" type="text" required placeholder="ID" name="username">
+                                    <input class="form-control" type="text" required placeholder="ID" name="username" autocomplete="off">
                                 </div>
                             </div>
 

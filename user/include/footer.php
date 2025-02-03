@@ -1,4 +1,4 @@
-<footer class="py-4 bg-dark mt-auto border" style="width: 1500px; margin-left:0;">
+<footer class="py-4 bg-dark mt-auto border" style="width: 1500px; margin-left:0; height: 1000px;">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
                             <div class="text-muted">Copyright &copy; XI RPL <?=date('Y')?></div>

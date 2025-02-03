@@ -64,6 +64,13 @@ include "include/conn.php";
       </li>
       <li>
 
+        <a href="../user/about.php" class="nav-link text-white" aria-current="page">
+        <i class="fa-solid fa-search"></i>
+          About
+        </a>
+      </li>
+      <li>
+
         <a href="../user/riwayat.php" class="nav-link text-white">
         <i class="fa-solid fa-clock-rotate-left"></i>
           Riwayat
@@ -82,8 +89,7 @@ include "include/conn.php";
           Ulasan
         </a>
       </li>
-      <br><br><br><br><br><br><br><br><br><br>
-      <br><br><br>
+
       <li>
         <a href="../user/login.php" class="nav-link text-white">
         <i class="fa-solid fa-right-from-bracket"></i>

@@ -135,22 +135,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <form action="" method="POST">
             <div class="form-group">
                 <label for="username">Your Username: </label>
-                <input type="text" class="form-control" id="username" name="username" placeholder="Username" required>
+                <input type="text" class="form-control" id="username" name="username" placeholder="Username" autocomplete="off" required>
             </div>
             <br>
             <div class="form-group">
                 <label for="email">Your Email: </label>
-                <input type="email" class="form-control" id="email" name="email" placeholder="E-mail" required>
+                <input type="email" class="form-control" id="email" name="email" placeholder="E-mail" autocomplete="off" required>
             </div>
             <br>
             <div class="form-group">
                 <label for="phone">Your Phone Number: </label>
-                <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone Number" required>
+                <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone Number" autocomplete="off" required>
             </div>
             <br>
             <div class="form-group">
                 <label for="password">Your Password: </label>
-                <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Password"  autocomplete="off" required>
             </div>
             <br>
             <button type="submit" name="send" class="btn btn-primary">Daftar</button>
